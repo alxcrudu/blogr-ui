@@ -8,9 +8,13 @@ window.onload = function () {
   if (window.innerWidth <= 950) toggleMenu.classList.add("hide");
 };
 
+document.addEventListener("DOMContentLoaded", function(){
+  if (window.innerWidth <= 950 && !toggleMenu.classList.contains('hide')) toggleMenu.classList.add("hide");
+});
+
 window.onresize = function () {
   if (window.innerWidth <= 950) toggleMenu.classList.add("hide");
-  else toggleMenu.classList.remove("hide");
+  else if (window.innerWidth >= 950 && toggleMenu.classList.contains('hide')) toggleMenu.classList.remove("hide");
 };
 
 hamburger.addEventListener("click", () => {
