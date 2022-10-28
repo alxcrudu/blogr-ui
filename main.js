@@ -4,9 +4,11 @@ const hamburger = document.getElementById("hamburger");
 const hamburgerIcon = document.getElementById("hamburger_icon");
 const xIcon = document.getElementById("x_icon");
 
-if (window.innerWidth <= 950) toggleMenu.classList.add("hide");
+window.onload = function () {
+  if (window.innerWidth <= 950) toggleMenu.classList.add("hide");
+};
 
-window.onresize = function() {
+window.onresize = function () {
   if (window.innerWidth <= 950) toggleMenu.classList.add("hide");
   else toggleMenu.classList.remove("hide");
 };
